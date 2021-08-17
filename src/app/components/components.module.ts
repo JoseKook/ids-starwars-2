@@ -9,6 +9,7 @@ import { EpisodioComponent } from './episodio/episodio.component';
 import { SaberMasComponent } from './saber-mas/saber-mas.component';
 
 import { NumerosRomanosPipe } from '../pipes/numeros-romanos.pipe';
+import { ReversePipe } from '../pipes/reverse.pipe';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { NumerosRomanosPipe } from '../pipes/numeros-romanos.pipe';
     InicioComponent,
     EpisodioComponent,
     SaberMasComponent,
-    NumerosRomanosPipe
+    NumerosRomanosPipe,
+    ReversePipe
   ],
   imports: [
     CommonModule,

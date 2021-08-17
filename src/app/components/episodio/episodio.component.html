@@ -1,8 +1,5 @@
-En el detalle de  cada episodio deberá mostrar  naves, personajes y planetas
 
-    1. Utilizar un pipe para invertir el texto es decir  ‘LUKE’ por EKUL en cualquiera de los datos a mostrar.
-
-<div class="p-d-flex mb-4">
+<div class="p-d-flex mb-4 mt-2" *ngIf=" !loadingEpisode ">
   <p-card styleClass="p-card-shadow">
     <ng-template pTemplate="title">
       <button pButton
@@ -14,7 +11,7 @@ En el detalle de  cada episodio deberá mostrar  naves, personajes y planetas
     <ng-template pTemplate="subtitle">
       {{ episode.release_date | date:'yyyy' }}
       <br>
-      {{ episode.director }}
+      {{ episode.director | reverse }}
     </ng-template>
     <ng-template pTemplate="content">
       <p>{{ episode.opening_crawl }}</p>
@@ -22,16 +19,78 @@ En el detalle de  cada episodio deberá mostrar  naves, personajes y planetas
 
     <ng-template pTemplate="footer">
       <p-tabView>
+
+        <!-- Personajes -->
         <p-tabPanel header="Characters">
-          Content 1
+
+          <!-- Skeleton - Loading Personajes -->
+          <div *ngIf=" loadingCharacters ">
+            <div class="p-field p-col-12 md-6 mb-8 mt-4">
+              <p-skeleton width="15rem" styleClass="mb-3" borderRadius="16px"></p-skeleton>
+              <p-skeleton width="15rem" styleClass="mb-3" borderRadius="16px"></p-skeleton>
+              <p-skeleton width="15rem" styleClass="mb-5" borderRadius="16px"></p-skeleton>
+              <p-skeleton styleClass="mb-3" borderRadius="16px"></p-skeleton>
+              <p-skeleton styleClass="mb-3" borderRadius="16px"></p-skeleton>
+              <p-skeleton styleClass="mb-3" borderRadius="16px"></p-skeleton>
+              <p-skeleton styleClass="mb-4" borderRadius="16px"></p-skeleton>
+            </div>
+          </div>
+
         </p-tabPanel>
+
+        <!-- Naves -->
         <p-tabPanel header="Starships">
-            Content 2
+
+
+          <!-- Skeleton - Loading Naves -->
+          <div *ngIf=" loadingStarships ">
+            <div class="p-field p-col-12 md-6 mb-8 mt-4">
+              <p-skeleton width="15rem" styleClass="mb-3" borderRadius="16px"></p-skeleton>
+              <p-skeleton width="15rem" styleClass="mb-3" borderRadius="16px"></p-skeleton>
+              <p-skeleton width="15rem" styleClass="mb-5" borderRadius="16px"></p-skeleton>
+              <p-skeleton styleClass="mb-3" borderRadius="16px"></p-skeleton>
+              <p-skeleton styleClass="mb-3" borderRadius="16px"></p-skeleton>
+              <p-skeleton styleClass="mb-3" borderRadius="16px"></p-skeleton>
+              <p-skeleton styleClass="mb-4" borderRadius="16px"></p-skeleton>
+            </div>
+          </div>
+
         </p-tabPanel>
+
+        <!-- Planetas -->
         <p-tabPanel header="Planets">
-            Content 3
+
+
+          <!-- Skeleton - Loading Planetas -->
+          <div *ngIf=" loadingPlanets ">
+            <div class="p-field p-col-12 md-6 mb-8 mt-4">
+              <p-skeleton width="15rem" styleClass="mb-3" borderRadius="16px"></p-skeleton>
+              <p-skeleton width="15rem" styleClass="mb-3" borderRadius="16px"></p-skeleton>
+              <p-skeleton width="15rem" styleClass="mb-5" borderRadius="16px"></p-skeleton>
+              <p-skeleton styleClass="mb-3" borderRadius="16px"></p-skeleton>
+              <p-skeleton styleClass="mb-3" borderRadius="16px"></p-skeleton>
+              <p-skeleton styleClass="mb-3" borderRadius="16px"></p-skeleton>
+              <p-skeleton styleClass="mb-4" borderRadius="16px"></p-skeleton>
+            </div>
+
+          </div>
         </p-tabPanel>
     </p-tabView>
   </ng-template>
   </p-card>
+</div>
+
+
+<!-- Skeleton - Loading Episode -->
+<div *ngIf=" loadingEpisode ">
+  <div class="p-field p-col-12 md-6 mb-8 mt-4">
+    <p-skeleton width="25rem" height="1.5rem" styleClass="mb-5" borderRadius="16px"></p-skeleton>
+    <p-skeleton width="15rem" styleClass="mb-3" borderRadius="16px"></p-skeleton>
+    <p-skeleton width="15rem" styleClass="mb-3" borderRadius="16px"></p-skeleton>
+    <p-skeleton width="15rem" styleClass="mb-5" borderRadius="16px"></p-skeleton>
+    <p-skeleton height="2rem" styleClass="mb-3" borderRadius="16px"></p-skeleton>
+    <p-skeleton height="2rem" styleClass="mb-3" borderRadius="16px"></p-skeleton>
+    <p-skeleton height="2rem" styleClass="mb-3" borderRadius="16px"></p-skeleton>
+    <p-skeleton height="2rem" styleClass="mb-4" borderRadius="16px"></p-skeleton>
+  </div>
 </div>
