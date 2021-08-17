@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./saber-mas.component.css']
 })
 export class SaberMasComponent implements OnInit {
+  nombre    : string = '';
+  apellido  : string = '';
+  fecha!    : Date;
+
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  enviarFormulario()
+  {
   }
 
 }

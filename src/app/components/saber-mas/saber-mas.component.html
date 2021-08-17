@@ -1,1 +1,17 @@
-<p>saber-mas works!</p>
+<h3>Ingrese sus datos</h3>
+
+<div class="p-fluid p-grid p-formgrid">
+    <div class="p-field p-col-12 p-md-4 mb-3">
+      <label for="nombre">Nombre</label>
+        <input type="text" inputId="nombre" pInputText pKeyFilter="alpha">
+    </div>
+    <div class="p-field p-col-12 p-md-4 mb-3">
+      <label for="apellido">Apellido</label>
+        <input type="text" inputId="apellido" pInputText pKeyFilter="alpha">
+    </div>
+    <div class="p-field p-col-12 p-md-4 mb-3">
+        <label for="basic">Fecha de nacimiento</label>
+        <p-calendar inputId="basic" [(ngModel)]="fecha"></p-calendar>
+    </div>
+    <p-button (onClick)="enviarFormulario" label="Enviar"></p-button>
+</div>

@@ -5,7 +5,18 @@
       <button pButton
               type="button"
               [label]=" 'Episode '+( episode.episode_id | numerosRomanos )+' : '+episode.title "
-              class="p-button-lg p-button-info p-button-outlined">
+              class="p-button-lg p-button-info p-button-outlined mb-2">
+      </button>
+
+      <br>
+
+      <button pButton
+              pRipple
+              type="button"
+              (click)="showModalFormulario()"
+              label="Saber más"
+              class="p-button-outlined p-button-secondary mb-2"
+      >
       </button>
     </ng-template>
     <ng-template pTemplate="subtitle">
@@ -112,6 +123,20 @@
   </ng-template>
   </p-card>
 </div>
+
+<!-- Modal formulario - Saber más -->
+<p-dialog header="¿Deseas saber más?"
+          [(visible)]="displayModal"
+          [modal]="true"
+          [style]="{width: '70vw', height: '90vw'}"
+          [draggable]="false"
+          [resizable]="false">
+  <app-saber-mas></app-saber-mas>
+</p-dialog>
+
+
+
+
 
 
 <!-- Skeleton - Loading Episode -->

@@ -24,6 +24,7 @@ export class EpisodioComponent implements OnInit, OnDestroy
   characters        : Character[]   = [];
   starships         : Starship[]    = [];
   planets           : Planet[]      = [];
+  displayModal      : boolean       = false
 
   constructor(  private router: Router,
                 private activatedRoute: ActivatedRoute,
@@ -79,7 +80,7 @@ export class EpisodioComponent implements OnInit, OnDestroy
       });
   }
 
-  regresar() {
-    this.router.navigate(['/']);
+  showModalFormulario() {
+        this.displayModal = true;
   }
 }

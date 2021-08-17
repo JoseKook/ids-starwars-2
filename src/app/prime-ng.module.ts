@@ -5,8 +5,10 @@ import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import {SkeletonModule} from 'primeng/skeleton';
 import {TabViewModule} from 'primeng/tabview';
-
-
+import {DialogModule} from 'primeng/dialog';
+import {CalendarModule} from 'primeng/calendar';
+import {KeyFilterModule} from 'primeng/keyfilter';
+import {InputTextModule} from 'primeng/inputtext';
 
 
 
@@ -20,7 +22,11 @@ import {TabViewModule} from 'primeng/tabview';
     CardModule,
     ButtonModule,
     SkeletonModule,
-    TabViewModule
+    TabViewModule,
+    DialogModule,
+    CalendarModule,
+    KeyFilterModule,
+    InputTextModule
   ]
 })
 export class PrimeNGModule { }
