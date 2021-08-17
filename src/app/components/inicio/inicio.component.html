@@ -1,1 +1,75 @@
-<p>inicio works!</p>
+
+<div *ngIf=" !loading ">
+  <div class="p-d-flex mb-4" *ngFor="let episode of episodes; let i = index">
+      <p-card styleClass="p-card-shadow">
+        <ng-template pTemplate="title">
+          <button pButton pRipple
+                  type="button"
+                  [routerLink]="['/', (i+1) ]"
+                  label="{{ episode.episode_id | numerosRomanos }} : {{ episode.title }}"
+                  class="p-button-lg p-button-raised p-button-text">
+          </button>
+        </ng-template>
+        <ng-template pTemplate="subtitle">
+          {{ episode.release_date | date:'yyyy' }}
+          <br>
+          {{ episode.director }}
+        </ng-template>
+        <ng-template pTemplate="content">
+          <p>{{ episode.opening_crawl }}</p>
+        </ng-template>
+      </p-card>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Skeleton - Loading -->
+<div *ngIf=" loading ">
+  <div class="p-field p-col-12 md-6 mb-8">
+    <p-skeleton width="20rem" height="1.5rem" styleClass="mb-3" borderRadius="16px"></p-skeleton>
+    <p-skeleton width="15rem" styleClass="mb-2" borderRadius="16px"></p-skeleton>
+    <p-skeleton width="15rem" styleClass="mb-4" borderRadius="16px"></p-skeleton>
+    <p-skeleton height="2rem" styleClass="mb-2" borderRadius="16px"></p-skeleton>
+  </div>
+
+  <div class="p-field p-col-12 md-6 mb-8">
+    <p-skeleton width="20rem" height="1.5rem" styleClass="mb-3" borderRadius="16px"></p-skeleton>
+    <p-skeleton width="15rem" styleClass="mb-2" borderRadius="16px"></p-skeleton>
+    <p-skeleton width="15rem" styleClass="mb-4" borderRadius="16px"></p-skeleton>
+    <p-skeleton height="2rem" styleClass="mb-2" borderRadius="16px"></p-skeleton>
+  </div>
+
+  <div class="p-field p-col-12 md-6 mb-8">
+    <p-skeleton width="20rem" height="1.5rem" styleClass="mb-3" borderRadius="16px"></p-skeleton>
+    <p-skeleton width="15rem" styleClass="mb-2" borderRadius="16px"></p-skeleton>
+    <p-skeleton width="15rem" styleClass="mb-4" borderRadius="16px"></p-skeleton>
+    <p-skeleton height="2rem" styleClass="mb-2" borderRadius="16px"></p-skeleton>
+  </div>
+
+  <div class="p-field p-col-12 md-6 mb-8">
+    <p-skeleton width="20rem" height="1.5rem" styleClass="mb-3" borderRadius="16px"></p-skeleton>
+    <p-skeleton width="15rem" styleClass="mb-2" borderRadius="16px"></p-skeleton>
+    <p-skeleton width="15rem" styleClass="mb-4" borderRadius="16px"></p-skeleton>
+    <p-skeleton height="2rem" styleClass="mb-2" borderRadius="16px"></p-skeleton>
+  </div>
+
+  <div class="p-field p-col-12 md-6 mb-8">
+    <p-skeleton width="20rem" height="1.5rem" styleClass="mb-3" borderRadius="16px"></p-skeleton>
+    <p-skeleton width="15rem" styleClass="mb-2" borderRadius="16px"></p-skeleton>
+    <p-skeleton width="15rem" styleClass="mb-4" borderRadius="16px"></p-skeleton>
+    <p-skeleton height="2rem" styleClass="mb-2" borderRadius="16px"></p-skeleton>
+  </div>
+</div>

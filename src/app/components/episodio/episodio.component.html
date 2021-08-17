@@ -1,1 +1,37 @@
-<p>episodio works!</p>
+En el detalle de  cada episodio deberá mostrar  naves, personajes y planetas
+
+    1. Utilizar un pipe para invertir el texto es decir  ‘LUKE’ por EKUL en cualquiera de los datos a mostrar.
+
+<div class="p-d-flex mb-4">
+  <p-card styleClass="p-card-shadow">
+    <ng-template pTemplate="title">
+      <button pButton
+              type="button"
+              [label]=" episode.title "
+              class="p-button-lg p-button-info p-button-outlined">
+      </button>
+    </ng-template>
+    <ng-template pTemplate="subtitle">
+      {{ episode.release_date | date:'yyyy' }}
+      <br>
+      {{ episode.director }}
+    </ng-template>
+    <ng-template pTemplate="content">
+      <p>{{ episode.opening_crawl }}</p>
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+      <p-tabView>
+        <p-tabPanel header="Characters">
+          Content 1
+        </p-tabPanel>
+        <p-tabPanel header="Starships">
+            Content 2
+        </p-tabPanel>
+        <p-tabPanel header="Planets">
+            Content 3
+        </p-tabPanel>
+    </p-tabView>
+  </ng-template>
+  </p-card>
+</div>

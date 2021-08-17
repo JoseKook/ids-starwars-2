@@ -1,20 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EpisodioComponent } from './components/episodio/episodio.component';
+import { InicioComponent } from './components/inicio/inicio.component';
 
 
 const routes: Routes = [
   {
-    path: 'auth',
-    loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule )
+    path: '',
+    component: InicioComponent
   },
   {
-    path: 'heroes',
-    loadChildren: () => import('./heroes/heroes.module').then( m => m.HeroesModule )
+    path: ':episode',
+    component: EpisodioComponent
   },
   {
     path: '**',
     // component: ErrorPageComponent
-    redirectTo: '404'
+    redirectTo: ''
   }
 ]
 
