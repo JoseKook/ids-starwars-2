@@ -22,8 +22,8 @@ export class EpisodioComponent implements OnInit, OnDestroy
   loadingPlanets    : boolean       = true;
   episode!          : Episode;
   characters        : Character[]   = [];
-  planets           : Planet[]      = [];
   starships         : Starship[]    = [];
+  planets           : Planet[]      = [];
 
   constructor(  private router: Router,
                 private activatedRoute: ActivatedRoute,
@@ -48,8 +48,6 @@ export class EpisodioComponent implements OnInit, OnDestroy
       .subscribe( ( episode ) => {
         this.episode = episode;
         this.loadingEpisode = false;
-
-        console.log(this.episode);
 
         this.getCharacters();
         this.getStarships();

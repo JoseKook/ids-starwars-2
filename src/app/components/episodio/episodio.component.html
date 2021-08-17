@@ -4,7 +4,7 @@
     <ng-template pTemplate="title">
       <button pButton
               type="button"
-              [label]=" episode.title "
+              [label]=" 'Episode '+( episode.episode_id | numerosRomanos )+' : '+episode.title "
               class="p-button-lg p-button-info p-button-outlined">
       </button>
     </ng-template>
@@ -23,6 +23,17 @@
         <!-- Personajes -->
         <p-tabPanel header="Characters">
 
+          <!-- Lista Personajes -->
+          <div class="p-fluid" *ngIf=" !loadingCharacters ">
+            <button *ngFor="let character of characters"
+                    pButton
+                    pRipple
+                    type="button"
+                    [label]=" character.name "
+                    class="p-field p-button-success p-button-text">
+            </button>
+          </div>
+
           <!-- Skeleton - Loading Personajes -->
           <div *ngIf=" loadingCharacters ">
             <div class="p-field p-col-12 md-6 mb-8 mt-4">
@@ -40,6 +51,18 @@
 
         <!-- Naves -->
         <p-tabPanel header="Starships">
+
+          <!-- Lista Naves -->
+          <div class="p-fluid" *ngIf=" !loadingStarships ">
+            <button *ngFor="let starship of starships"
+                    pButton
+                    pRipple
+                    type="button"
+                    [label]=" starship.name "
+                    class="p-field p-button-success p-button-text">
+            </button>
+          </div>
+
 
 
           <!-- Skeleton - Loading Naves -->
@@ -60,6 +83,16 @@
         <!-- Planetas -->
         <p-tabPanel header="Planets">
 
+          <!-- Lista Planetas -->
+          <div class="p-fluid" *ngIf=" !loadingPlanets ">
+            <button *ngFor="let planet of planets"
+                    pButton
+                    pRipple
+                    type="button"
+                    [label]=" planet.name "
+                    class="p-field p-button-success p-button-text">
+            </button>
+          </div>
 
           <!-- Skeleton - Loading Planetas -->
           <div *ngIf=" loadingPlanets ">

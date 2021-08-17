@@ -6,7 +6,7 @@
           <button pButton pRipple
                   type="button"
                   [routerLink]="['/', (i+1) ]"
-                  label="{{ episode.episode_id | numerosRomanos }} : {{ episode.title }}"
+                  label=" Episode: {{ episode.episode_id | numerosRomanos }} : {{ episode.title }}"
                   class="p-button-lg p-button-raised p-button-text">
           </button>
         </ng-template>

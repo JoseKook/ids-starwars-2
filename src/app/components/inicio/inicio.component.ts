@@ -31,8 +31,6 @@ export class InicioComponent implements OnInit, OnDestroy
           .subscribe( (films: FilmsResponse) => {
             this.episodes = films.results;
             this.loading = false;
-
-            console.log(this.episodes);
           });
     }
 
