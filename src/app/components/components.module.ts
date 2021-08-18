@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { PrimeNGModule } from '../prime-ng.module';
 
@@ -25,7 +26,8 @@ import { ReversePipe } from '../pipes/reverse.pipe';
     CommonModule,
     PrimeNGModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ComponentsModule { }
