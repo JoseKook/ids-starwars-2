@@ -13,7 +13,7 @@ export class SaberMasComponent implements OnInit
   formulario: FormGroup = this.formBuilder.group({
     apellido   : ['', Validators.required],
     nombre     : ['', Validators.required],
-    fecha      : [new Date(), [Validators.required, this.validarEdad] ]
+    fecha      : ['', [Validators.required, this.validarEdad] ]
   });
 
   constructor( private formBuilder: FormBuilder) { }
@@ -29,7 +29,7 @@ export class SaberMasComponent implements OnInit
 
   validarEdad( control: FormControl)
   {
-    const fechaNacimiento = control.value;
+    const fechaNacimiento = control.value || new Date();
     const fechaActual     = new Date() as any;
 
     if (fechaActual.getFullYear() - fechaNacimiento.getFullYear() < 18) {
